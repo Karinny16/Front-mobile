@@ -9,7 +9,7 @@ import Assembleia from './src/pages/assembleia/assembleia';
 import AssembleiaText from './src/pages/assembleia/assembleiaText';
 import Comunicados from './src/pages/Comunicados/comunicados';
 import ComunicadosText from './src/pages/Comunicados/comunicadosText';
-
+import PerfilEdit from './src/pages/perfil/perfil';
 import BottomRoutes from './src/routes/botton.routes';
 
 const Stack = createStackNavigator();
@@ -48,7 +48,11 @@ export default function App() {
           component={ComunicadosText} 
           options={{ title: 'Comunicados Post' }} 
         />
-        {/* Se desejar, adicione outras telas, como Login, quando necessário */}
+         <Stack.Screen 
+          name="PerfilEdit" 
+          component={PerfilEdit} 
+          options={{ title: 'Perfil Edit' }} 
+        />
         {/* <Stack.Screen 
             name="Login" 
             component={Login} 

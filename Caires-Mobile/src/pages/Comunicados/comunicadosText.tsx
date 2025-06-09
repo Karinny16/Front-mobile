@@ -133,6 +133,11 @@ const styles = StyleSheet.create({
     borderRadius: 15,
     backgroundColor: '#0A9EDE',
     marginVertical: 10,
+    shadowColor: "#888", 
+  shadowOffset: { width: 1, height: 6 }, 
+  shadowOpacity: 0.5, 
+  shadowRadius: 5, 
+  elevation: 5, 
   },
   buttonText: {
     color: '#fff',

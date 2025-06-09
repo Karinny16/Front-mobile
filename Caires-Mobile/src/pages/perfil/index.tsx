@@ -1,27 +1,34 @@
 import React from "react";
 import Entypo from '@expo/vector-icons/Entypo';
-import { Text, TouchableOpacity, View, TextInput, } from "react-native";
+import { Text, TouchableOpacity, View } from "react-native";
+import { useNavigation } from '@react-navigation/native';
 import { Styles } from "./style";
 
-export default function Perfil (){
-    return(
-       <View style={Styles.container}>
-                   <Text style={Styles.text}>Perfil</Text>
-                   <View style={Styles.Box}>
-                        <View style={Styles.circle}>
-                            <Entypo name="user" size={80} color="black" />
-                        </View>
-                        <TouchableOpacity>
-                        <Text style={Styles.text1}>Editar</Text>
-                        </TouchableOpacity>
-                        
+export default function Perfil() {
+  const navigation = useNavigation();
 
-                        <TouchableOpacity style={Styles.button}>
-                        <Text>Editar Perfil</Text>
-
-                        </TouchableOpacity>
-                    
-                   </View>
-               </View>
-    )
-}
+  return (
+    <View style={Styles.fundo}>
+      <Text style={Styles.text1}>Perfil</Text>
+      <View style={Styles.Container}>
+        <View style={Styles.circle}>
+          <Entypo name="user" size={80} color="black" />
+        </View>
+        <View style={Styles.botoesContainer}>
+          <TouchableOpacity
+            style={Styles.botoes}
+            onPress={() => navigation.navigate("PerfilEdit")}
+          >
+            <Text style={Styles.buttonText}>Perfil Edit</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={Styles.botoes}>
+            <Text style={Styles.buttonText}>Suporte</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={Styles.botoes}>
+            <Text style={Styles.buttonText}>Sair</Text>
+          </TouchableOpacity>
+        </View>
+      </View>
+    </View>
+  );
+}                   
