@@ -3,10 +3,19 @@ import Entypo from '@expo/vector-icons/Entypo';
 import { Text, TextInput, ScrollView, TouchableOpacity, View } from "react-native";
 import {useNavigation} from '@react-navigation/native';
 import { Styles } from "./perfil.styles";
+import { useFonts } from 'expo-font';
+
 
 const PerfilEdit = () => {
-   const navigation = useNavigation();  
-  return (
+const navigation = useNavigation();
+
+    const [fontsLoaded] = useFonts({
+        Poppins: require('../../../src/assets/fonts/Poppins-Regular.ttf'),
+    });
+
+    if (!fontsLoaded) {
+        return <View style={Styles.Container}><Text>Carregando fontes...</Text></View>;
+    }  return (
     <View style={Styles.fundo}>
       <View style={Styles.Container}>
         <ScrollView contentContainerStyle={Styles.scrollContent}>
@@ -68,7 +77,7 @@ onPress={() => navigation.navigate('Home')}>
               <Text style={Styles.buttonText}>Voltar</Text>
             </TouchableOpacity>
             <TouchableOpacity style={Styles.botoes}
-            onPress={() => navigation.navigate('Home')}>
+            onPress={() => navigation.navigate('Perfil')}>
               <Text style={Styles.buttonText}>Confirmar</Text>
             </TouchableOpacity>
           </View>

@@ -3,10 +3,19 @@ import { View, Text, TextInput, StyleSheet, Image, TouchableOpacity, ScrollView 
 import { themas } from "../../global/themas";
 import { useNavigation } from '@react-navigation/native';
 import LogoC from '../../assets/LogoCairesC.png';
+import { useFonts } from 'expo-font';
+
 
 const AssembleiaText = () => {
-      const navigation = useNavigation();
-  
+  const navigation = useNavigation();
+
+  const [fontsLoaded] = useFonts({
+    Poppins: require('../../../src/assets/fonts/Poppins-Regular.ttf'),
+  });
+
+  if (!fontsLoaded) {
+    return <View style={styles.container}><Text>Carregando fontes...</Text></View>;
+  }
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Adicionar Post na Assembleia</Text>
@@ -36,12 +45,12 @@ const AssembleiaText = () => {
           />
         </View>
         <TouchableOpacity style={styles.buttons}
-           onPress={() => navigation.navigate('Assembleia')}>
+          onPress={() => navigation.navigate('Assembleia')}>
 
           <Text style={styles.buttonText}>Enviar</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.buttons}
-        onPress={() => navigation.navigate('Home')}>
+          onPress={() => navigation.navigate('Home')}>
 
           <Text style={styles.buttonText}>Voltar</Text>
         </TouchableOpacity>
@@ -58,6 +67,8 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   title: {
+    fontFamily: 'Poppins',
+
     marginBottom: 20,
     color: themas.colors.white,
     fontSize: 18,
@@ -65,6 +76,8 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
   },
   text: {
+    fontFamily: 'Poppins',
+
     marginBottom: 20,
     color: themas.colors.black,
     fontSize: 18,
@@ -83,6 +96,7 @@ const styles = StyleSheet.create({
     padding: 8,
   },
   nome: {
+    fontFamily: 'Poppins',
     width: '90%',
     height: 40,
     borderWidth: 1,
@@ -92,6 +106,7 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   conteudo: {
+    fontFamily: 'Poppins',
     width: '90%',
     height: 140,
     borderWidth: 1,
@@ -133,13 +148,14 @@ const styles = StyleSheet.create({
     borderRadius: 15,
     backgroundColor: '#0A9EDE',
     marginVertical: 10,
-    shadowColor: "#888", 
-  shadowOffset: { width: 1, height: 6 }, 
-  shadowOpacity: 0.5, 
-  shadowRadius: 5, 
-  elevation: 5,  
+    shadowColor: "#888",
+    shadowOffset: { width: 1, height: 6 },
+    shadowOpacity: 0.5,
+    shadowRadius: 5,
+    elevation: 5,
   },
   buttonText: {
+    fontFamily: 'Poppins',
     color: '#fff',
     fontSize: 16,
   },

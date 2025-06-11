@@ -5,8 +5,8 @@ import { useNavigation } from '@react-navigation/native';
 import LogoC from '../../assets/LogoCairesC.png';
 
 const ComunicadosText = () => {
-    const navigation = useNavigation();
-  
+  const navigation = useNavigation();
+
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Adicionar Comunicado</Text>
@@ -57,6 +57,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   title: {
+    fontFamily: 'Poppins',
     marginBottom: 20,
     color: themas.colors.white,
     fontSize: 18,
@@ -64,6 +65,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
   },
   text: {
+    fontFamily: 'Poppins',
     marginBottom: 20,
     color: themas.colors.black,
     fontSize: 18,
@@ -82,6 +84,8 @@ const styles = StyleSheet.create({
     padding: 8,
   },
   nome: {
+    fontFamily: 'Poppins',
+
     width: '90%',
     height: 40,
     borderWidth: 1,
@@ -91,6 +95,8 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   titulos: {
+    fontFamily: 'Poppins',
+
     width: '90%',
     height: 50,
     borderWidth: 1,
@@ -102,6 +108,7 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   conteudo: {
+    fontFamily: 'Poppins',
     width: '90%',
     height: 150,
     borderWidth: 1,
@@ -133,13 +140,14 @@ const styles = StyleSheet.create({
     borderRadius: 15,
     backgroundColor: '#0A9EDE',
     marginVertical: 10,
-    shadowColor: "#888", 
-  shadowOffset: { width: 1, height: 6 }, 
-  shadowOpacity: 0.5, 
-  shadowRadius: 5, 
-  elevation: 5, 
+    shadowColor: "#888",
+    shadowOffset: { width: 1, height: 6 },
+    shadowOpacity: 0.5,
+    shadowRadius: 5,
+    elevation: 5,
   },
   buttonText: {
+    fontFamily: 'Poppins',
     color: '#fff',
     fontSize: 16,
   },

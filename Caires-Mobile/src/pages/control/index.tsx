@@ -3,8 +3,12 @@ import {Text, TouchableOpacity, View, Animated, ScrollView} from 'react-native'
 import { Styles } from "./style";
 import AntDesign from '@expo/vector-icons/AntDesign';
 import Visitante from "../../components/BotaoVisitante/BotaoVisitante";
-export default function Control(){
-    const [expandido, setExpandido] = useState(false);
+import { useFonts } from 'expo-font';
+
+
+export default function Control(){  
+      
+  const [expandido, setExpandido] = useState(false);
   const altura = useRef(new Animated.Value(50)).current;
 
   const alternar = () => {
@@ -17,7 +21,13 @@ export default function Control(){
       useNativeDriver: false,
     }).start();
   };
-
+const [fontsLoaded] = useFonts({
+          Poppins: require('../../../src/assets/fonts/Poppins-Regular.ttf'),
+      });
+  
+      if (!fontsLoaded) {
+          return <View style={Styles.container}><Text>Carregando fontes...</Text></View>;
+      }
     return(
         <View style={Styles.container}>
             <Text style={Styles.text}>Controle de visitantes permanentes</Text>

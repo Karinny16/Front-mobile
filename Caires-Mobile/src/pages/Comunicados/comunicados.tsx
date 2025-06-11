@@ -20,13 +20,16 @@ const Comunicados = () => {
               <MaterialIcons name="add-circle" size={40} color="#000" />
             </TouchableOpacity>
           </View>
-          <Comunicado/>
-                    <Comunicado/>
-          <Comunicado/>
-
-        </ScrollView>
-      </View>
+      <View style={Styles.centerPosts}>
+      <Comunicado />
+      <Comunicado />
+      <Comunicado />
     </View>
+
+
+        </ScrollView >
+      </View >
+    </View >
   );
 };
 

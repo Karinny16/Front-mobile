@@ -3,10 +3,21 @@ import Entypo from '@expo/vector-icons/Entypo';
 import { Text, TouchableOpacity, View } from "react-native";
 import { useNavigation } from '@react-navigation/native';
 import { Styles } from "./style";
+import { useFonts } from 'expo-font';
+
+
 
 export default function Perfil() {
-  const navigation = useNavigation();
 
+const navigation = useNavigation();
+
+    const [fontsLoaded] = useFonts({
+        Poppins: require('../../../src/assets/fonts/Poppins-Regular.ttf'),
+    });
+
+    if (!fontsLoaded) {
+        return <View style={Styles.Container}><Text>Carregando fontes...</Text></View>;
+    }
   return (
     <View style={Styles.fundo}>
       <Text style={Styles.text1}>Perfil</Text>

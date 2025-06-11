@@ -37,7 +37,8 @@ export const Styles = StyleSheet.create({
     marginTop: 30,
   },
   text1: {
-    marginTop: 5,  
+    marginTop: 5,
+    fontFamily: 'Poppins',
     color: themas.colors.black,
     fontSize: 18,
     textDecorationLine: "underline",
@@ -48,6 +49,7 @@ export const Styles = StyleSheet.create({
     alignItems: "center",
   },
   txti: {
+    fontFamily: 'Poppins',
     width: "90%",
     height: 40,
     borderWidth: 1,
@@ -55,13 +57,13 @@ export const Styles = StyleSheet.create({
     marginVertical: 10,
     borderRadius: 8,
     paddingHorizontal: 10,
-    fontSize:14,
+    fontSize: 14,
   },
   botoesContainer: {
     width: "100%",
     alignItems: "center",
-    paddingBottom: 30, 
-    marginTop: 40  
+    paddingBottom: 30,
+    marginTop: 40
   },
   botoes: {
     alignItems: "center",
@@ -78,7 +80,13 @@ export const Styles = StyleSheet.create({
     elevation: 5,
   },
   buttonText: {
+    fontFamily: 'Poppins',
     color: "#fff",
     fontSize: 16,
+  },
+  texti: {
+    fontFamily: 'Poppins',
+    fontSize: 12,
+
   },
 });

@@ -27,9 +27,11 @@ export const Styles = StyleSheet.create({
     padding: 8,
   },
   scrollContent: {
+    flexGrow: 1,              
     paddingBottom: 16,
+    alignItems: 'center',      
+    justifyContent: 'center',  
   },
-
   divlogo: {
     flexDirection: 'row',         
     justifyContent: 'space-between',
@@ -42,5 +44,8 @@ export const Styles = StyleSheet.create({
     width: 50,
     height: 50,
   },
-
+  centerPosts: {
+    width: '100%',         
+    alignItems: 'center',
+  },
 });
