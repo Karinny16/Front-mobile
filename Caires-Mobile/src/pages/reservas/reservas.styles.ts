@@ -34,7 +34,7 @@ export const Styles = StyleSheet.create({
   },
   logoContainer: {
     flexDirection: 'row',
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
     alignItems: 'center',
     width: '100%',
     marginBottom: 20
@@ -52,13 +52,15 @@ export const Styles = StyleSheet.create({
   calendar: {
     borderWidth: 1,
     borderColor: '#eee',
-    borderRadius: 5
+    borderRadius: 5,
+    
   },
   selected: {
     marginTop: 42,
     fontSize: 16,
     color: '#000000',
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    backgroundColor: "#F8F2EF",
   },
   selectedDateValue: {
     color: '#000000',
@@ -69,14 +71,15 @@ export const Styles = StyleSheet.create({
     height: 30,
     alignItems: 'center',
     justifyContent: 'center',
-    borderRadius: 7
+    borderRadius: 7,
+    
   },
   daySelected: {
-    backgroundColor: '#F06543',
+    backgroundColor: '#0A9EDE',
     borderRadius: 7
   },
   dayText: {
-    color: '##F06543'
+    color: '#000000'
   },
   dayTextSelected: {
     color: '#000000',
@@ -86,6 +89,25 @@ export const Styles = StyleSheet.create({
     color: '#E8E8E8'
   },
   today:{
-    color:'#F06543',
+    color:'#0A9EDE',
+  },
+   buttons: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: 250,
+    height: 50,
+    borderRadius: 15,
+    backgroundColor: '#0A9EDE',
+    marginVertical: 10,
+    shadowColor: "#888",
+    shadowOffset: { width: 1, height: 6 },
+    shadowOpacity: 0.5,
+    shadowRadius: 5,
+    elevation: 5,
+  },
+  buttonText: {
+    fontFamily: 'Poppins',
+    color: '#fff',
+    fontSize: 16,
   }
 });

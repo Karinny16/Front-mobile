@@ -6,7 +6,7 @@ import { Styles } from './reservas.styles';
 import { Feather } from "@expo/vector-icons"
 import { useState } from "react"
 import { ptBR } from '../utils/localeCalendarConfig'
-import {DayState} from "react-native-calendars/src/types";
+import { DayState } from "react-native-calendars/src/types";
 
 LocaleConfig.locales["pt-br"] = ptBR
 LocaleConfig.defaultLocale = "pt-br"
@@ -26,20 +26,21 @@ const Reservas = () => {
                     <View style={Styles.containerCalen}>
                         <Calendar
                             style={Styles.calendar}
-                            renderArrow={(direction: "right" | "left") => (<Feather size={24} color="#E8E8E8"
+                            renderArrow={(direction: "right" | "left") => (<Feather size={24} color="#000000"
                                 name={`chevron-${direction}`} />
                             )}
                             headerStyle={{
                                 borderBottomWidth: 0.5,
-                                borderBottomColor: "#E8E8E8",
+                                borderBottomColor: "#000000",
                                 paddingBottom: 10,
                                 marginBottom: 10,
                             }}
                             theme={{
                                 textMonthFontSize: 18,
-                                monthTextColor: "#F06543",
+                                monthTextColor: "#000000",
+                                textSectionTitleColor: "#000000",
                                 todayTextColor: "#F06543",
-                                selectedDayBackgroundColor: "#F06543", // Corrigido
+                                selectedDayBackgroundColor: "#F06543",
                                 selectedDayTextColor: "#E8E8E8",
                                 arrowColor: "#E8E8E8",
                                 calendarBackground: "transparent",
@@ -48,7 +49,7 @@ const Reservas = () => {
                                 arrowStyle: {
                                     margin: 0,
                                     padding: 0,
-                                }
+                                },
                             }}
                             minDate={new Date().toDateString()}
                             hideExtraDays={true}
@@ -60,26 +61,35 @@ const Reservas = () => {
                                 date,
                                 state,
                             }:
-                                 { date: DateData
+                                {
+                                    date: DateData
                                     state: DayState
-                                 }) => {
-                               return (
-                                <TouchableOpacity style={[Styles.day,
+                                }) => {
+                                return (
+                                    <TouchableOpacity style={[Styles.day,
                                     date.dateString === day?.dateString && Styles.daySelected,
-                                ]}
-                                onPress={() => setDay(date)}
-                                >
-                                    <Text style={[Styles.dayText,
-                                        (state === "inactive"  || state === "disabled") && Styles.disabled,
-                                       state === "today" && Styles.today,
-                                       date.dateString === day?.dateString && Styles.dayText,
-                                    ]}>{date.day}</Text>
-                                </TouchableOpacity>
-                               )
+                                    ]}
+                                        onPress={() => setDay(date)}
+                                    >
+                                        <Text style={[Styles.dayText,
+                                        (state === "inactive" || state === "disabled") && Styles.disabled,
+                                        state === "today" && Styles.today,
+                                        date.dateString === day?.dateString && Styles.dayText,
+                                        ]}>{date.day}</Text>
+                                    </TouchableOpacity>
+                                )
                             }}
                         />
-                        <Text  style={Styles.selected}>Data selecionada: {day?.dateString}</Text>
+                        <Text style={Styles.selected}>
+                            Churrasqueira reservada para o dia: {day ? `${String(day.day).padStart(2, '0')}/${String(day.month).padStart(2, '0')}/${day.year}` : ''}
+                        </Text>
                     </View>
+
+                    <TouchableOpacity style={Styles.buttons}
+                        onPress={() => navigation.navigate('Home')}>
+
+                        <Text style={Styles.buttonText}>Confirmar Reserva</Text>
+                    </TouchableOpacity>
                 </ScrollView>
             </View>
         </View>
