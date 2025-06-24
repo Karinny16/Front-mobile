@@ -27,7 +27,8 @@ export default function Home() {
                 <View style={Styles.circle}>
                     <Entypo name="user" size={80} color="black" />
                 </View>
-                <TouchableOpacity style={[Styles.boxButton, { top: 215, left: 190 }]}>
+                <TouchableOpacity style={[Styles.boxButton, { top: 215, left: 190 }]}
+                     onPress={() => navigation.navigate('Reservas')}>
                     <MaterialIcons name="event-note" size={35} color="black" />
                 </TouchableOpacity>
                 <TouchableOpacity 

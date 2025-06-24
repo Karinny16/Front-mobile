@@ -11,6 +11,7 @@ import Comunicados from './src/pages/Comunicados/comunicados';
 import ComunicadosText from './src/pages/Comunicados/comunicadosText';
 import PerfilEdit from './src/pages/perfil/perfil';
 import Perfil from './src/pages/perfil/index';
+import Reservas from './src/pages/reservas/reservas';
 import BottomRoutes from './src/routes/botton.routes';
 
 const Stack = createStackNavigator();
@@ -58,6 +59,11 @@ export default function App() {
           name="Perfil" 
           component={Perfil} 
           options={{ title: 'Perfil' }} 
+        />
+         <Stack.Screen 
+          name="Reservas" 
+          component={Reservas} 
+          options={{ title: 'Reservas' }} 
         />
         {/* <Stack.Screen 
             name="Login" 
